@@ -10,7 +10,7 @@ const MoviesContainer = ({ movies, getAllMovies }) => {
         <>
             <h4>{movies.listName}</h4>
             <ul>
-                {movies.list.map(movie => <li>{movie}</li>)}
+                {movies.list.map((movie) => <li key={movie.id}>{movie}</li>)}
             </ul>
         </>
     )

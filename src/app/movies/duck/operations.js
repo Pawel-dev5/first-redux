@@ -3,8 +3,6 @@ import actions from "./actions";
 
 const API = 'http://www.omdbapi.com/?s=harry&apikey='
 const APIKEY = process.env.REACT_APP_OMDB_API;
-const URL = `${API}?apikey=${APIKEY}`
-// console.log(URL)
 
 const fetchMovies = async () => {
     const response = await fetch(`${API}${APIKEY}`, { method: 'GET' })

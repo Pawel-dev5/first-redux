@@ -5,7 +5,7 @@ const ActorsContainer = ({ actors }) =>
     <>
         <h4>{actors.listName}</h4>
         <ul>
-            {actors.list.map(actor => <li>{actor}</li>)}
+            {actors.list.map((actor, index) => <li key={index}>{actor}</li>)}
         </ul>
     </>
 
