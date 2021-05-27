@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { getAllMovies } from '../duck/operations';
 
-const MoviesContainer = ({movies}) =>
-    <>
-        <h4>{movies.listName}</h4>
-        <ul>
-            {movies.list.map(movie => <li>{movie}</li>)}
-        </ul>
-    </>
+const MoviesContainer = ({ movies, getAllMovies }) => {
+
+    useEffect(() => { getAllMovies() }, [])
+
+    return (
+        <>
+            <h4>{movies.listName}</h4>
+            <ul>
+                {movies.list.map(movie => <li>{movie}</li>)}
+            </ul>
+        </>
+    )
+}
 
 const mapStateToProps = state => ({
     movies: state.movies
 })
 
-export default connect(mapStateToProps, {})(MoviesContainer)
+const mapDispatchToProps = dispatch => ({
+    getAllMovies: () => dispatch(getAllMovies())
+})
+
+export default connect(
+    mapStateToProps, mapDispatchToProps
+)(MoviesContainer)
