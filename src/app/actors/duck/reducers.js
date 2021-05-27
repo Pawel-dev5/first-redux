@@ -1,7 +1,7 @@
 import types from "./types";
 
 const INITIAL_STATE = {
-    listName: 'Best',
+    listName: 'Best actors',
     list: [
       'Tom', 'Julia', "Leo"
     ]

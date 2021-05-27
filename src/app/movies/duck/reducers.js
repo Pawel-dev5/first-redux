@@ -1,7 +1,7 @@
 import types from "./types";
 
 const INITIAL_STATE = {
-    listName: 'Favourite',
+    listName: 'Favourite movies',
     list: [
       "TWP", "JPWM", "Przyjaciele"
     ]
